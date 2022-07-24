@@ -35,11 +35,11 @@ const studentRegSchema = new mongoose.Schema({
         unique: true
     },
 
-    age:{
+    // age:{
 
-        type: Number,
-        required: true
-    },
+    //     type: Number,
+    //     required: true
+    // },
 
     // class:{
 
