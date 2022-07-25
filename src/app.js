@@ -38,6 +38,11 @@ app.get("/register", (req,res) =>{
     res.render("register")
 })
 
+app.get("/index", (req,res) =>{
+
+    res.render("index")
+})
+
 app.post("/register", async (req,res) =>{    //async - await method
 
     try{
@@ -103,6 +108,10 @@ app.get("/login", (req,res) => {
     res.render("login")
 
 
+})
+
+app.get("/section", (req,res)=>{
+    res.render("section")
 })
 
 app.post("/login", async(req,res) =>{
