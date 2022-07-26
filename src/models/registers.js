@@ -75,6 +75,45 @@ const studentRegSchema = new mongoose.Schema({
     ]
 })
 
+const ContactSchema = new mongoose.Schema({
+
+    name: {
+        type: String,
+        required: true,
+        minlength: 2
+    },
+
+        email:{
+
+            type: String,
+            required: true,
+            unique:true,
+
+            // validate(value){
+
+            //     if(!validator.isEmail(value)){
+
+            //         throw new Error("Invalid Error")
+            //     } 
+            // } 
+        
+    },
+
+    subject:{
+        type: String
+        
+    },
+
+    message:{
+
+        type: String
+
+    }
+
+   
+    
+})
+
 // tokens part
 studentRegSchema.methods.generateAuthToken = async function(){
 
@@ -118,3 +157,7 @@ studentRegSchema.pre("save", async function(next){  //middleware concept
 const Register  = new mongoose.model('Register', studentRegSchema )
 
 module.exports = Register;
+
+const Contact  = new mongoose.model('Contact', ContactSchema )
+
+module.exports = Contact;

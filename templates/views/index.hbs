@@ -402,12 +402,12 @@
          </li> 
          <!-- choose class end -->
 
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto active" href="#">Home</a></li>
           <li><a class="nav-link scrollto" href="#quizz">Quizzes</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Leaderboard</a></li>
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-          <li><a class="nav-link scrollto" href="#portfolio">Premium</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Premium</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
           <!-- <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
           <!-- <li><a href="blog.html">Blog</a></li> -->
@@ -1277,27 +1277,27 @@
 
           <div class="col-lg-6 mt-3 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="/index" method="POST">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" value="">
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="">
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" value="">
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="10" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="10" placeholder="Message" value=""></textarea>
               </div>
-              <div class="my-3">
+              {{!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Message sent. Thank you!</div>
-              </div>
-              <div  style="padding-top:30px" class="text-center"><button type="submit">Send Message</button></div>
+              </div> --}}
+              <div  style="padding-top:30px" class="text-center"><button type="submit" class="contbtn" value="Index">Send</button></div>
             </form>
 
           </div>

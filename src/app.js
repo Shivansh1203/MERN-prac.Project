@@ -2,7 +2,9 @@ require('dotenv').config()
 const express = require("express");
 const path = require("path")
 require("./db/conn");
+// require("./db/contconn");
 const Register  = require("./models/registers")
+const Contact  = require("./models/registers")
 const app = express();
 const hbs  = require("hbs")
 const bcrypt = require("bcryptjs")
@@ -101,6 +103,36 @@ app.post("/register", async (req,res) =>{    //async - await method
     }
 
 })
+
+app.post("/index", async (req,res) =>{ 
+
+    try{
+
+
+            const contactStudent = new Contact({
+
+                name: req.body.name,
+                email: req.body.email,
+                subject: req.body.subject,
+                message: req.body.message
+
+            })
+
+
+            const contacted = await contactStudent.save();
+            console.log("the page part" + contacted)
+            res.status(201).render("index")
+
+
+        }catch(e){
+
+            res.status(400).send(e);
+            console.log("the error part page")
+    
+        }
+
+    })
+
 
 
 app.get("/login", (req,res) => {

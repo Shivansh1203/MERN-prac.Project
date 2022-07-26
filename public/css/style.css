@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding: 0 3px;
   font-size: 40 px;
-  color: #00de8d;
+  color: #06f69e;
   white-space: nowrap;
   transition: 0.3s;
   position: relative;
@@ -427,7 +427,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -5px;
   left: 0;
   /* background-color: #000 ; */
-  visibility: hidden;
+  visibility: visible;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
 }
@@ -1277,7 +1277,7 @@ font-family:Arial, Helvetica, sans-serif;
 .contact .php-email-form textarea {
   padding: 10px 12px;
 }
-.contact .php-email-form button[type=submit] {
+/* .contact .php-email-form button[type=submit] {
   border: 0;
   padding: 10px 32px;
   color: #000;
@@ -1285,8 +1285,25 @@ font-family:Arial, Helvetica, sans-serif;
   border-radius: 50px;
   border: 2px solid #000;
   background: #fff;
+} */
+/* .contact .php-email-form button[type=submit]:hover {
+  background: #000;
+  color: #fff;
+} */
+.contbtn{
+
+  border: 0;
+  padding: 10px 32px;
+  color: #000;
+  transition: 0.4s;
+  border-radius: 50px;
+  border: 2px solid #000;
+  background: #fff;
+
+
 }
-.contact .php-email-form button[type=submit]:hover {
+
+.contbtn :hover {
   background: #000;
   color: #fff;
 }
