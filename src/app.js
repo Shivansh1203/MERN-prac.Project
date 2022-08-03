@@ -4,7 +4,7 @@ const path = require("path")
 require("./db/conn");
 // require("./db/contconn");
 const Register  = require("./models/registers")
-const Contact  = require("./models/registers")
+const Contact  = require("./models/contacts")
 const app = express();
 const hbs  = require("hbs")
 const bcrypt = require("bcryptjs")
@@ -31,18 +31,29 @@ hbs.registerPartials(partials_path)
 
 // console.log(process.env.SECRET_KEY)
 
+app.get("/index", (req,res) =>{
+
+    res.render("index")
+})
+
 app.get("/" , (req,res) =>{
     res.render("index")
 })
+
+app.get("/section", (req,res)=>{
+    res.render("section")
+})
+
 
 app.get("/register", (req,res) =>{
 
     res.render("register")
 })
 
-app.get("/index", (req,res) =>{
 
-    res.render("index")
+app.get("/login", (req,res) =>{
+
+    res.render("login")
 })
 
 app.post("/register", async (req,res) =>{    //async - await method
@@ -104,47 +115,7 @@ app.post("/register", async (req,res) =>{    //async - await method
 
 })
 
-app.post("/index", async (req,res) =>{ 
 
-    try{
-
-
-            const contactStudent = new Contact({
-
-                name: req.body.name,
-                email: req.body.email,
-                subject: req.body.subject,
-                message: req.body.message
-
-            })
-
-
-            const contacted = await contactStudent.save();
-            console.log("the page part" + contacted)
-            res.status(201).render("index")
-
-
-        }catch(e){
-
-            res.status(400).send(e);
-            console.log("the error part page")
-    
-        }
-
-    })
-
-
-
-app.get("/login", (req,res) => {
-
-    res.render("login")
-
-
-})
-
-app.get("/section", (req,res)=>{
-    res.render("section")
-})
 
 app.post("/login", async(req,res) =>{
 
@@ -186,6 +157,35 @@ app.post("/login", async(req,res) =>{
         res.status(400).send("Invalid Email")
     }   
 })
+
+app.post("/index", async (req,res) =>{ 
+
+    try{
+
+
+            const contactStudent = new Contact({
+
+                name: req.body.name,
+                email: req.body.email,
+                subject: req.body.subject,
+                message: req.body.message
+
+            })
+
+
+            const contacted = await contactStudent.save();
+            console.log("the page part" + contacted)
+            res.status(201).render("index")
+
+
+        }catch(e){
+
+            res.status(400).send(e);
+            console.log("the errorCon part page")
+    
+        }
+
+    })
 
 
 // const bcrypt = require("bcryptjs")
